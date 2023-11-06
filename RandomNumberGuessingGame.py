@@ -1,5 +1,5 @@
 # Created by Jonathan Sarkarati
-# 10/25/23
+# 10/25/23 (Updated 11/6/23)
 # Random Number Guessing Game
 # This program plays a game of "getting hot or cold."
 import random
@@ -18,12 +18,14 @@ def main():
         
         count = 1
         guess = int(input('\nMake a guess: '))
-        while guess > magic_number:
-            guess = int(input('Too high, try again: '))
-            count+=1           
-        while guess < magic_number:
-            guess = int(input('Too low, try again: '))
-            count+=1
+        while guess != magic_number:
+            if guess > magic_number:
+                guess = int(input('Too high, try again: '))
+                count += 1
+            if guess < magic_number:
+                guess = int(input('Too low, try again: '))
+                count+=1
+
         game_result(count)
        
         # Play another game?
