@@ -42,7 +42,7 @@ def print_fahr_cel():
     tally6 = FAHR_MIN + NUM_ROWS * 5    # Control 6th Fahrenheit column
 
     # 1st column of Fahrenheit conversions
-    for fahrenheit in range(32, FAHR_MIN+NUM_ROWS):
+    for fahrenheit in range(FAHR_MIN, FAHR_MIN+NUM_ROWS):
 
         # 2nd column of Fahrenheit conversions
         for fahrenheit2 in range(FAHR_MIN+NUM_ROWS, FAHR_MIN+NUM_ROWS*2 + 1):
