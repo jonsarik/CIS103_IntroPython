@@ -38,7 +38,7 @@ def print_chart():
     cel_tally2 = CEL_MIN + NUM_ROWS  # For 2nd Celsius column
 
     # 1st column of Fahrenheit conversions
-    for fahrenheit in range(32, FAHR_MIN+NUM_ROWS):
+    for fahrenheit in range(FAHR_MIN, FAHR_MIN+NUM_ROWS):
 
         # 2nd column of Fahrenheit conversions
         for fahrenheit2 in range(FAHR_MIN+NUM_ROWS, FAHR_MIN+NUM_ROWS*2+1):
