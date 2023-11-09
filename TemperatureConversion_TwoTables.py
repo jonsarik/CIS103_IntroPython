@@ -46,37 +46,45 @@ def print_fahr_cel():
 
         # 2nd column of Fahrenheit conversions
         for fahrenheit2 in range(FAHR_MIN+NUM_ROWS, FAHR_MIN+NUM_ROWS*2 + 1):
+            if fahrenheit2 != tally2:
+                continue
 
             # 3rd column of Fahrenheit conversions
             for fahrenheit3 in range(FAHR_MIN+NUM_ROWS * 2, FAHR_MIN+NUM_ROWS * 3 + 1):
+                if fahrenheit3 != tally3:
+                    continue
 
                 # 4th column of Fahrenheit conversions
                 for fahrenheit4 in range(FAHR_MIN + NUM_ROWS * 3, FAHR_MIN+NUM_ROWS*4 + 1):
+                    if fahrenheit4 != tally4:
+                        continue
 
                     # 5th column of Fahrenheit conversions
                     for fahrenheit5 in range(FAHR_MIN + NUM_ROWS * 4, FAHR_MIN+NUM_ROWS*5 + 1):
+                        if fahrenheit5 != tally5:
+                            continue
 
                         # 6th column of Fahrenheit conversions
                         for fahrenheit6 in range(FAHR_MIN + NUM_ROWS * 5, FAHR_MAX + 1):
+                            if fahrenheit6 != tally6:
+                                continue
 
-                            if fahrenheit2 == tally2 and fahrenheit3 == tally3 and fahrenheit4 == tally4 and fahrenheit5 == tally5 and fahrenheit6 == tally6:
-                                print(
-                                    f'\t{fahrenheit:3}\t\t{convert_to_celsius(fahrenheit):5.1f}'
-                                    f'\t\t{fahrenheit2:3}\t\t{convert_to_celsius(fahrenheit2):6.1f}'
-                                    f'\t\t{fahrenheit3:3}\t\t{convert_to_celsius(fahrenheit3):6.1f}'
-                                    f'\t\t{fahrenheit4:4}\t{convert_to_celsius(fahrenheit4):6.1f}'
-                                    f'\t\t{fahrenheit5:4}\t{convert_to_celsius(fahrenheit5):6.1f}'
-                                    f'\t\t{fahrenheit6:4}\t{convert_to_celsius(fahrenheit6):6.1f}')
+                            print(
+                                f'\t{fahrenheit:3}\t\t{convert_to_celsius(fahrenheit):5.1f}'
+                                f'\t\t{fahrenheit2:3}\t\t{convert_to_celsius(fahrenheit2):6.1f}'
+                                f'\t\t{fahrenheit3:3}\t\t{convert_to_celsius(fahrenheit3):6.1f}'
+                                f'\t\t{fahrenheit4:4}\t{convert_to_celsius(fahrenheit4):6.1f}'
+                                f'\t\t{fahrenheit5:4}\t{convert_to_celsius(fahrenheit5):6.1f}'
+                                f'\t\t{fahrenheit6:4}\t{convert_to_celsius(fahrenheit6):6.1f}')
 
                         # Continue printing when final column for Fahrenheit reaches max
                         if tally6 > FAHR_MAX:
-                            if fahrenheit2 == tally2 and fahrenheit3 == tally3 and fahrenheit4 == tally4 and fahrenheit5 == tally5:
-                                print(
-                                    f'\t{fahrenheit:3}\t\t{convert_to_celsius(fahrenheit):5.1f}'
-                                    f'\t\t{fahrenheit2:3}\t\t{convert_to_celsius(fahrenheit2):6.1f}'
-                                    f'\t\t{fahrenheit3:3}\t\t{convert_to_celsius(fahrenheit3):6.1f}'
-                                    f'\t\t{fahrenheit4:4}\t{convert_to_celsius(fahrenheit4):6.1f}'
-                                    f'\t\t{fahrenheit5:4}\t{convert_to_celsius(fahrenheit5):6.1f}')
+                            print(
+                                f'\t{fahrenheit:3}\t\t{convert_to_celsius(fahrenheit):5.1f}'
+                                f'\t\t{fahrenheit2:3}\t\t{convert_to_celsius(fahrenheit2):6.1f}'
+                                f'\t\t{fahrenheit3:3}\t\t{convert_to_celsius(fahrenheit3):6.1f}'
+                                f'\t\t{fahrenheit4:4}\t{convert_to_celsius(fahrenheit4):6.1f}'
+                                f'\t\t{fahrenheit5:4}\t{convert_to_celsius(fahrenheit5):6.1f}')
 
         tally2 += 1
         tally3 += 1
@@ -103,27 +111,31 @@ def print_cel_fahr():
 
         # 2nd column of Celsius conversions
         for celsius2 in range(NUM_ROWS2, NUM_ROWS2 * 2):
+            if celsius2 != cel_tally2:
+                continue
 
             # 3rd column of Celsius conversions
             for celsius3 in range(NUM_ROWS2 * 2, NUM_ROWS2 * 3):
+                if celsius3 != cel_tally3:
+                    continue
 
                 # 4th column of Celsius conversions
                 for celsius4 in range(NUM_ROWS2 * 3, CEL_MAX + 1):
+                    if celsius4 != cel_tally4:
+                        continue
 
-                    if celsius2 == cel_tally2 and celsius3 == cel_tally3 and celsius4 == cel_tally4:
-                        print(
-                            f'{celsius:5}\t{convert_to_fahrenheit(celsius):7}'
-                            f'\t\t{celsius2:5}\t{convert_to_fahrenheit(celsius2):7}'
-                            f'\t\t{celsius3:5}\t{convert_to_fahrenheit(celsius3):7}'
-                            f'\t\t{celsius4:5}\t{convert_to_fahrenheit(celsius4):7}')
+                    print(
+                        f'{celsius:5}\t{convert_to_fahrenheit(celsius):7}'
+                        f'\t\t{celsius2:5}\t{convert_to_fahrenheit(celsius2):7}'
+                        f'\t\t{celsius3:5}\t{convert_to_fahrenheit(celsius3):7}'
+                        f'\t\t{celsius4:5}\t{convert_to_fahrenheit(celsius4):7}')
 
                 # Continue printing when final column for Celsius reaches max
                 if cel_tally4 > CEL_MAX:
-                    if celsius2 == cel_tally2 and celsius3 == cel_tally3:
-                        print(
-                            f'{celsius:5}\t{convert_to_fahrenheit(celsius):7}'
-                            f'\t\t{celsius2:5}\t{convert_to_fahrenheit(celsius2):7}'
-                            f'\t\t{celsius3:5}\t{convert_to_fahrenheit(celsius3):7}')
+                    print(
+                        f'{celsius:5}\t{convert_to_fahrenheit(celsius):7}'
+                        f'\t\t{celsius2:5}\t{convert_to_fahrenheit(celsius2):7}'
+                        f'\t\t{celsius3:5}\t{convert_to_fahrenheit(celsius3):7}')
         cel_tally2 += 1
         cel_tally3 += 1
         cel_tally4 += 1
