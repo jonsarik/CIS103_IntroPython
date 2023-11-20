@@ -1,0 +1,60 @@
+# Created by Jonathan Sarkarati
+# 11/11/23
+# Random Number File Writer
+# This program writes a series of random numbers to a file
+import random
+
+# Constants
+MIN = 1
+MAX = 500
+FILE_NAME = 'random_numbers.txt'
+
+
+def main():
+    print_intro()               # Program description
+    try:
+        limit = get_limit()     # Get how many numbers to be written
+    except ValueError:
+        print('Enter numbers as digits and not numerals, and try again.')
+    except:
+        print('An error occurred')
+    else:
+        # Write random generated numbers to file
+        with open(FILE_NAME, 'w') as random_list:
+            for numbers in range(limit):
+                random_list.write(f'{random.randint(MIN, MAX)}\n')
+        exit_program(limit)
+
+
+# Explain the program
+def print_intro():
+    print("""
++===========================================================+
+| This program writes a series of random numbers to a file. |
+| You specify how long that list of randoms will be.        |
++===========================================================+
+    """)
+
+
+# Amount of random numbers to be generated
+def get_limit():
+    length = int(input('How many random generated numbers do you want written to file? '))
+    while length <= 0:
+        length = int(input('Invalid. Please enter a positive number of random numbers to be written: '))
+    return length
+
+
+# End program
+def exit_program(limit):
+    print()
+    if limit != 1:
+        print(f'{limit} numbers written to "{FILE_NAME}"')
+    else:
+        print(f'{limit} number written to "{FILE_NAME}"')
+    input('\nPress Enter to exit program.')
+    print('Exiting program...')
+    print('Goodbye!')
+
+
+if __name__ == '__main__':
+    main()
