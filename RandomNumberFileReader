@@ -1,0 +1,65 @@
+# Created by Jonathan Sarkarati
+# 11/20/23
+# Random Number File Reader
+# This program reads a file random numbers and displays their sum.
+
+# Constants
+FILE_NAME = 'random_numbers.txt'
+
+
+def main():
+    try:
+        print_intro()           # Program description
+        total = 0
+        tally = 0
+
+        with open(FILE_NAME, 'r') as random_list:
+            for line in random_list:
+                num = int(line)
+                total += num
+                tally += 1
+                print(f'{line.rstrip():>3}', end= ' ')
+                if tally % 10 == 0:     # 10 lines per row
+                    print()
+            if tally % 10 != 0:         # Prevents double spacing after last data point
+                print()
+    except FileNotFoundError as err:
+        print(err)
+    #except:
+        print('An error occurred.')
+    else:
+        get_result(total, tally)
+    finally:
+        exit_program()
+
+
+# Explain the program
+def print_intro():
+    print("""
++=================================================+
+| This program reads a file of randomly generated |
+| numbers and displays their sum total.           |     
++=================================================+
+    """)
+
+
+# Show the amount of numbers in file and their sum total
+def get_result(sum, tally):
+    print()
+    print(f'The total sum of all numbers in "{FILE_NAME}": {sum:,}')
+    if tally != 1:
+        print(f'There are {tally} numbers in file.')
+    else:
+        print(f'There is {tally} number in file.')
+
+
+# End program
+def exit_program():
+    print()
+    input('Press Enter to exit program.')
+    print('Closing file...')
+    print('Exiting program.')
+
+
+if __name__ == '__main__':
+    main()
